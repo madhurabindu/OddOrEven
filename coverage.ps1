@@ -1,21 +1,9 @@
 param($linerate)
 
-function WriteXmlToScreen ([xml]$xml)
-{
-    $StringWriter = New-Object System.IO.StringWriter;
-    $XmlWriter = New-Object System.Xml.XmlTextWriter $StringWriter;
-    $XmlWriter.Formatting = "indented";
-    $xml.WriteTo($XmlWriter);
-    $XmlWriter.Flush();
-    $StringWriter.Flush();
-    Write-Output $StringWriter.ToString();
-}
-
 [xml]$doc = Get-Content -Path UnitTestProject\TestResults\*\coverage.cobertura.xml
 Write-Host "---------------------------------"
 Write-Host "Code Coverage report ..." 
 Write-Host "---------------------------------"
-WriteXmlToScreen $doc
 
 Write-Host ""
 Write-Host "---------------------------------"
