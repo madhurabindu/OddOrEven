@@ -1,4 +1,4 @@
-[xml]$doc = Get-Content -Path UnitTestProject\TestResults\*\coverage.cobertura.xml -Raw
+[xml]$doc = Get-Content -Path UnitTestProject\TestResults\*\coverage.cobertura.xml | Out-String
 Write-Host "---------------------------------"
 Write-Host "Code Coverage report ..." 
 Write-Host "---------------------------------"
