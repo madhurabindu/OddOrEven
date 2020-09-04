@@ -19,4 +19,7 @@ jobs:
        
       - name: run resharper duplicate code check
         run: jb dupfinder OddOrEven.sln -o=dupreport.xml
+      
+      - name: run report analysis
+        run: powershell ./resharper.ps1
 
