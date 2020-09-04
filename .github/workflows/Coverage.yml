@@ -1,4 +1,4 @@
-name: Code coverage
+name: Coverage
  
 on: 
     push:
@@ -19,5 +19,5 @@ jobs:
         run: dotnet test --collect:"XPlat Code Coverage"
       
       - name: Check Coverage
-        run: powershell ./coverage.ps1 -linerate 1
+        run: powershell ./coverage.ps1
 
