@@ -5,14 +5,13 @@ on:
         branches: [master]
  
 jobs:
-  build:
- 
+  resharper:
     runs-on: windows-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: Setup Resharper
-        uses: goit/setup-resharper@v1
+      - name: checkout
+        uses: actions/checkout@v2
       
-      - name: Running code analysis
-        run: InspectCode OddOrEven.sln
+      - name: resharper
+        uses: glassechidna/resharper-action@master
+        with:
+          solution: OddOrEven.sln
