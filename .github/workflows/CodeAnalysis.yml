@@ -6,7 +6,7 @@ on:
  
 jobs:
   resharper:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -19,4 +19,7 @@ jobs:
        
       - name: run resharper duplicate code check
         run: jb dupfinder OddOrEven.sln -o=dupreport.xml
+      
+      - name: run report analysis
+        run: powershell ./resharper.ps1
 
