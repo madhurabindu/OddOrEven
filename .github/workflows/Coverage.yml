@@ -15,6 +15,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
            dotnet-version: 3.1.101
+      - name: Clear the test directory
+        run: rmdir unittestproject\testresults /s /q
+        
       - name: Generate coverage report
         run: dotnet test --collect:"XPlat Code Coverage"
       
