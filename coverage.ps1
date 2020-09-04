@@ -11,11 +11,10 @@ function WriteXmlToScreen ([xml]$xml)
     Write-Output $StringWriter.ToString();
 }
 
+[xml]$doc = Get-Content -Path UnitTestProject\TestResults\*\coverage.cobertura.xml
 Write-Host "---------------------------------"
 Write-Host "Code Coverage report ..." 
 Write-Host "---------------------------------"
-[xml]$doc = Get-Content -Path UnitTestProject\TestResults\*\coverage.cobertura.xml
-
 WriteXmlToScreen $doc
 
 Write-Host ""
