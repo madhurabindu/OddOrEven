@@ -1,0 +1,20 @@
+name: Build and Run
+ 
+on: 
+    push:
+        branches: [master]
+ 
+jobs:
+  build:
+ 
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup Resharper
+        uses: goit/setup-resharper@v1
+        with:
+          version: '2020.1'
+      
+      - name: Running code analysis
+        run: InspectCode OddOrEven.sln
