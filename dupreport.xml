@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DuplicatesReport ToolsVersion="202.0.20200820.132558">
+  <Statistics>
+    <CodebaseCost>718</CodebaseCost>
+    <TotalDuplicatesCost>5</TotalDuplicatesCost>
+    <TotalFragmentsCost>0</TotalFragmentsCost>
+  </Statistics>
+  <Duplicates></Duplicates>
+</DuplicatesReport>
