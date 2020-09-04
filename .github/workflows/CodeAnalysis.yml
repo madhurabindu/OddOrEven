@@ -13,8 +13,6 @@ jobs:
         uses: actions/checkout@master
       - name: Setup Resharper
         uses: goit/setup-resharper@v1
-        with:
-          version: '2020.1'
       
       - name: Running code analysis
         run: InspectCode OddOrEven.sln
