@@ -20,10 +20,4 @@ jobs:
       
       - name: Check Coverage
         run: powershell ./coverage.ps1
-#          cd ./UnitTestProject/
- #         dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
- #    - name: Publish coverage report to coveralls.io
-  #      uses: coverallsapp/github-action@v1.0.1
-   #     with:
-    #      github-token: ${{ secrets.GITHUB_TOKEN }}
-     #     path-to-lcov: ./UnitTestProject/TestResults/coverage.info 
+
