@@ -23,7 +23,7 @@ jobs:
         run: dir
         
       - name: run resharper inspection
-        run: jb inspectcode OddOrEven.sln -o=insreport.xml
+        run: jb inspectcode -o=insreport.xml OddOrEven.sln 
        
       - name: run resharper duplicate code check
         run: jb dupfinder OddOrEven.sln -o=dupreport.xml
