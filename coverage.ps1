@@ -23,7 +23,7 @@ Write-Host "---------------------------------"
 Write-Host "Code Coverage report Analysis..." 
 Write-Host "---------------------------------"
 
-$result = 1
+$result = 0
 
 Write-Host "Line-Coverage: ["$doc.coverage.'line-rate'"] Branch-Coverage: ["$doc.coverage.'branch-rate'"]"
 Write-Host ""
@@ -31,7 +31,7 @@ Write-Host ""
     Write-Host "Package:"  $pkg.name "Line-Coverage:"$pkg.'line-rate'
 
     if($pkg.'line-rate' -le $linerate){
-        $result= 0
+        $result= 1
        }
     }
 

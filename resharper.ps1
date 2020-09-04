@@ -30,25 +30,25 @@ Write-Host "---------------------------------"
 
 $issuetypes = $insdoc.SelectNodes("//IssueTypes/IssueType")
 
-$result = 1
+$result = 0
 
 if($issuetypes.count -eq 0){
     Write-Host "Number of Inspection Violations:" $issuetypes.count -ForegroundColor green 
 }
 else{
     Write-Host "Number of Inspection Violations:" $issuetypes.count -ForegroundColor red
-    $result = 0
+    $result = 1
 }
 
 
 $duplicateCost = $dupdoc.DuplicatesReport.Statistics.TotalDuplicatesCost
 
-if($duplicateCost -eq 0){
+if($duplicateCost -eq ){
     Write-Host "Cost of Duplicate Code:" $duplicateCost -ForegroundColor green 
 }
 else{
     Write-Host "Cost of Duplicate Code:" $duplicateCost -ForegroundColor red 
-    $result = 0
+    $result = 1
 }
 
 exit $result
