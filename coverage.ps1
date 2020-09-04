@@ -1,6 +1,6 @@
 
 Write-Host "Start" 
-[xml]$doc = Get-Content -Path C:\Codebase\Philips\BootcampRepositories\OddOrEven\UnitTestProject\TestResults\7e105305-04a1-445b-931c-99c883232a3a\coverage.cobertura.xml
+[xml]$doc = Get-Content -Path UnitTestProject\TestResults\*\coverage.cobertura.xml
 
 
 $result = 1
