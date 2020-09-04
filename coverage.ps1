@@ -1,5 +1,3 @@
-param($linerate)
-
 [xml]$doc = Get-Content -Path UnitTestProject\TestResults\*\coverage.cobertura.xml
 Write-Host "---------------------------------"
 Write-Host "Code Coverage report ..." 
