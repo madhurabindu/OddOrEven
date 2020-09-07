@@ -31,7 +31,7 @@ Write-Host ""
  foreach ($pkg in $doc.coverage.packages.package) {
     Write-Host "Package:"  $pkg.name "Line-Coverage:"$pkg.'line-rate'
 
-    if($pkg.'line-rate' -le $linerate){
+    if($pkg.'line-rate' -lt $linerate){
         $result= 1
        }
     }
