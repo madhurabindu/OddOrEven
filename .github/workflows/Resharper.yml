@@ -1,4 +1,4 @@
-name: Resharper Code Analysis
+name: Code Analysis
  
 on: 
     push:
@@ -6,28 +6,16 @@ on:
  
 jobs:
   resharper:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
       
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
-        with:
-           dotnet-version: 3.1.101
-      
       - name: install resharper
         run: dotnet tool install -g JetBrains.ReSharper.GlobalTools
-        
-      - name: print help
-        run: jb inspectcode --help
         
       - name: run resharper inspection
         run: jb inspectcode OddOrEven.sln -o=insreport.xml
        
       - name: run resharper duplicate code check
         run: jb dupfinder OddOrEven.sln -o=dupreport.xml
-      
-      - name: run report analysis
-        run: powershell ./resharper.ps1
-
