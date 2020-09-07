@@ -1,4 +1,4 @@
-name: Code Analysis
+name: Resharper Code Analysis
  
 on: 
     push:
@@ -6,7 +6,7 @@ on:
  
 jobs:
   resharper:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
         run: dotnet tool install -g JetBrains.ReSharper.GlobalTools
         
       - name: run resharper inspection
-        run: jb inspectcode OddOrEven.sln -o=insreport.xml
+        run: jb inspectcode OddOrEven.sln /output=insreport.xml
        
       - name: run resharper duplicate code check
         run: jb dupfinder OddOrEven.sln -o=dupreport.xml
