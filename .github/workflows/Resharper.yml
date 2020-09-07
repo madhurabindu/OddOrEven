@@ -8,14 +8,17 @@ jobs:
   resharper:
     runs-on: windows-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
       
-      - name: install resharper
+      - name: Install resharper
         run: dotnet tool install -g JetBrains.ReSharper.GlobalTools
         
-      - name: run resharper inspection
+      - name: Run resharper inspection
         run: jb inspectcode OddOrEven.sln /output=insreport.xml
        
-      - name: run resharper duplicate code check
+      - name: Run resharper duplicate code check
         run: jb dupfinder OddOrEven.sln -o=dupreport.xml
+       
+      - name: Check Reports
+        run: powershell resharper.ps1
